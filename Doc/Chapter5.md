@@ -40,7 +40,7 @@ True
 
 polls アプリケーションの`test.py`に次のコードを書きます
 
-```
+```python3
 # polls/tests.py
 
 import datetime
