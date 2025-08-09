@@ -9,8 +9,10 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
     
+    # 過去1日以内に公開されたかどうかを判断するメソッド
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 
 class Choice(models.Model):
