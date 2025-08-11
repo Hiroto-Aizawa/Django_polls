@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     # /polls/で始まるURLのアクセスをpollsアプリ内のurls.pyでさらに振り分ける
     path("polls/", include("polls.urls")),
     path('admin/', admin.site.urls),
+    path('__debug__/', include("debug_toolbar.urls")),
 ]
